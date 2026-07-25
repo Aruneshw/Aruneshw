@@ -11,6 +11,14 @@
 
 <br />
 
+## 🚧 What I'm Currently Working On (Local/Upcoming)
+
+*   🛡️ **AI Phishing Detection Platform:** A real-time browser extension powered by a custom Scikit-learn Machine Learning model, Flask backend, and Supabase for community-driven threat intelligence.
+*   🧠 **RAG Knowledge System:** A Retrieval-Augmented Generation engine utilizing ChromaDB for vector storage and intelligent data scraping to provide context-aware LLM responses.
+*   🤖 **Autonomous Multi-Agent Framework:** A dynamic Node.js orchestrator and Python execution environment for deploying autonomous AI agents to solve complex workflows.
+
+<br />
+
 ## 🚀 Languages and Tools I Use
 
 <div align="center">
