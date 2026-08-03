@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="36" viewBox="0 0 620 36">
+  <style>
+    @font-face {
+      font-family: 'JB';
+      src: url(data:font/woff2;charset=utf-8;base64,) format('woff2');
+    }
+  </style>
+  <text x="0" y="28" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="24" font-weight="700" fill="#c9d1d9" opacity="0">
+    about
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0.1s" fill="freeze"/>
+    <animate attributeName="x" from="-20" to="0" dur="0.8s" begin="0.1s" fill="freeze"/>
+  </text>
+  <line x1="0" y1="34" x2="0" y2="34" stroke="#30363d" stroke-width="1">
+    <animate attributeName="x2" from="0" to="620" dur="1s" begin="0.3s" fill="freeze"/>
+  </line>
+</svg>

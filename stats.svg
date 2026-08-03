@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="100" viewBox="0 0 620 100">
+  <rect width="620" height="100" fill="transparent"/>
+  
+  <!-- Main contribution count -->
+  <text x="10" y="45" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="42" font-weight="700" fill="#c9d1d9" opacity="0">
+    297
+    <animate attributeName="opacity" from="0" to="1" dur="1s" begin="0.2s" fill="freeze"/>
+  </text>
+  <text x="10" y="65" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#8b949e" opacity="0">
+    contributions in the last year
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0.6s" fill="freeze"/>
+  </text>
+  
+  <!-- Stats on the right -->
+  <text x="460" y="25" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#8b949e" opacity="0" text-anchor="end">
+    active days
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0.8s" fill="freeze"/>
+  </text>
+  <text x="550" y="25" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="20" font-weight="700" fill="#c9d1d9" opacity="0" text-anchor="end">
+    56
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0.8s" fill="freeze"/>
+  </text>
+  
+  <text x="460" y="50" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#8b949e" opacity="0" text-anchor="end">
+    best week
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="1.0s" fill="freeze"/>
+  </text>
+  <text x="550" y="50" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="20" font-weight="700" fill="#c9d1d9" opacity="0" text-anchor="end">
+    42
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="1.0s" fill="freeze"/>
+  </text>
+  
+  <!-- Activity line graph -->
+  <polyline points="180,85 200,83 220,85 240,84 260,80 280,75 300,60 320,40 340,30 360,25 380,35 400,45 420,50 440,55 460,60 480,65 500,70 520,75 540,80 560,83 580,85 600,84" 
+    fill="none" stroke="#c9d1d9" stroke-width="1.5" opacity="0" stroke-dasharray="800" stroke-dashoffset="800">
+    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.4s" fill="freeze"/>
+    <animate attributeName="stroke-dashoffset" from="800" to="0" dur="2s" begin="0.5s" fill="freeze"/>
+  </polyline>
+  
+  <!-- Horizontal line separator -->
+  <line x1="180" y1="88" x2="180" y2="88" stroke="#30363d" stroke-width="0.5">
+    <animate attributeName="x2" from="180" to="610" dur="1.2s" begin="0.3s" fill="freeze"/>
+  </line>
+</svg>

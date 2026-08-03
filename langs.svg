@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="160" viewBox="0 0 620 160">
+  <rect width="620" height="160" fill="transparent"/>
+  
+  <!-- BY BYTES header -->
+  <text x="10" y="18" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="9" fill="#6e7681" opacity="0">
+    by bytes
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.1s" fill="freeze"/>
+  </text>
+  
+  <!-- BY REPOS header -->
+  <text x="320" y="18" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="9" fill="#6e7681" opacity="0">
+    by repos
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.1s" fill="freeze"/>
+  </text>
+  
+  <!-- Language bars - BY BYTES (left column) -->
+  <!-- TypeScript -->
+  <text x="10" y="40" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#8b949e" opacity="0">
+    typescript
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.2s" fill="freeze"/>
+  </text>
+  <text x="130" y="40" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#6e7681" opacity="0">
+    47%
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.2s" fill="freeze"/>
+  </text>
+  <rect x="170" y="30" width="0" height="12" rx="2" fill="#c9d1d9">
+    <animate attributeName="width" from="0" to="120" dur="0.8s" begin="0.3s" fill="freeze"/>
+  </rect>
+  
+  <!-- Python -->
+  <text x="10" y="62" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#8b949e" opacity="0">
+    python
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.3s" fill="freeze"/>
+  </text>
+  <text x="130" y="62" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#6e7681" opacity="0">
+    17%
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.3s" fill="freeze"/>
+  </text>
+  <rect x="170" y="52" width="0" height="12" rx="2" fill="#c9d1d9">
+    <animate attributeName="width" from="0" to="43" dur="0.8s" begin="0.4s" fill="freeze"/>
+  </rect>
+  
+  <!-- HTML -->
+  <text x="10" y="84" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#8b949e" opacity="0">
+    html
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.4s" fill="freeze"/>
+  </text>
+  <text x="130" y="84" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#6e7681" opacity="0">
+    15%
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.4s" fill="freeze"/>
+  </text>
+  <rect x="170" y="74" width="0" height="12" rx="2" fill="#c9d1d9">
+    <animate attributeName="width" from="0" to="38" dur="0.8s" begin="0.5s" fill="freeze"/>
+  </rect>
+  
+  <!-- CSS -->
+  <text x="10" y="106" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#8b949e" opacity="0">
+    css
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.5s" fill="freeze"/>
+  </text>
+  <text x="130" y="106" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#6e7681" opacity="0">
+    12%
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.5s" fill="freeze"/>
+  </text>
+  <rect x="170" y="96" width="0" height="12" rx="2" fill="#c9d1d9">
+    <animate attributeName="width" from="0" to="30" dur="0.8s" begin="0.6s" fill="freeze"/>
+  </rect>
+  
+  <!-- JavaScript -->
+  <text x="10" y="128" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#8b949e" opacity="0">
+    javascript
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6s" fill="freeze"/>
+  </text>
+  <text x="130" y="128" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#6e7681" opacity="0">
+    5%
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6s" fill="freeze"/>
+  </text>
+  <rect x="170" y="118" width="0" height="12" rx="2" fill="#c9d1d9">
+    <animate attributeName="width" from="0" to="13" dur="0.8s" begin="0.7s" fill="freeze"/>
+  </rect>
+  
+  <!-- Kotlin -->
+  <text x="10" y="150" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#8b949e" opacity="0">
+    kotlin
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.7s" fill="freeze"/>
+  </text>
+  <text x="130" y="150" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#6e7681" opacity="0">
+    4%
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.7s" fill="freeze"/>
+  </text>
+  <rect x="170" y="140" width="0" height="12" rx="2" fill="#c9d1d9">
+    <animate attributeName="width" from="0" to="10" dur="0.8s" begin="0.8s" fill="freeze"/>
+  </rect>
+  
+  <!-- BY REPOS (right column) -->
+  <!-- TypeScript -->
+  <text x="320" y="40" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#8b949e" opacity="0">
+    typescript
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.2s" fill="freeze"/>
+  </text>
+  <text x="560" y="40" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#6e7681" text-anchor="end" opacity="0">
+    6
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.2s" fill="freeze"/>
+  </text>
+  <rect x="440" y="30" width="0" height="12" rx="2" fill="#c9d1d9">
+    <animate attributeName="width" from="0" to="100" dur="0.8s" begin="0.3s" fill="freeze"/>
+  </rect>
+  
+  <!-- HTML -->
+  <text x="320" y="62" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#8b949e" opacity="0">
+    html
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.3s" fill="freeze"/>
+  </text>
+  <text x="560" y="62" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#6e7681" text-anchor="end" opacity="0">
+    5
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.3s" fill="freeze"/>
+  </text>
+  <rect x="440" y="52" width="0" height="12" rx="2" fill="#c9d1d9">
+    <animate attributeName="width" from="0" to="83" dur="0.8s" begin="0.4s" fill="freeze"/>
+  </rect>
+  
+  <!-- CSS -->
+  <text x="320" y="84" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#8b949e" opacity="0">
+    css
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.4s" fill="freeze"/>
+  </text>
+  <text x="560" y="84" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#6e7681" text-anchor="end" opacity="0">
+    3
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.4s" fill="freeze"/>
+  </text>
+  <rect x="440" y="74" width="0" height="12" rx="2" fill="#c9d1d9">
+    <animate attributeName="width" from="0" to="50" dur="0.8s" begin="0.5s" fill="freeze"/>
+  </rect>
+  
+  <!-- Kotlin -->
+  <text x="320" y="106" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#8b949e" opacity="0">
+    kotlin
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.5s" fill="freeze"/>
+  </text>
+  <text x="560" y="106" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="11" fill="#6e7681" text-anchor="end" opacity="0">
+    2
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.5s" fill="freeze"/>
+  </text>
+  <rect x="440" y="96" width="0" height="12" rx="2" fill="#c9d1d9">
+    <animate attributeName="width" from="0" to="33" dur="0.8s" begin="0.6s" fill="freeze"/>
+  </rect>
+  
+  <!-- Divider -->
+  <line x1="308" y1="10" x2="308" y2="10" stroke="#30363d" stroke-width="1">
+    <animate attributeName="y2" from="10" to="155" dur="0.8s" begin="0.2s" fill="freeze"/>
+  </line>
+  
+  <!-- Bottom line -->
+  <text x="310" y="158" font-family="'JetBrains Mono','SF Mono','Fira Code','Consolas',monospace" font-size="8" fill="#6e7681" text-anchor="middle" opacity="0">
+    62 of 365 days had a contribution
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="1.0s" fill="freeze"/>
+  </text>
+</svg>

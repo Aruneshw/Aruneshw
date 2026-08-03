@@ -1,121 +1,95 @@
 <div align="center">
 
-```
-                      .:-=**#%@@@@@@@@@@%#**=-:.                      
-                  :=+#%%%%#@@@@%%%%####%%@@@@@%%#+=:                  
-              .=*%@@@@@%+--+==---::...:::-+#%@@@@@@@%*=.              
-           .=#%@@@@%%%%+:..  .. .......... .:*%@@@@@@@@%#=.           
-         :*%@@@@@@%#*+-:...       ..  ...  . .-*@%@@@@@@@@%*:         
-       :*%@@@@@%@%=:......                     .+@@@@@@@@@@@%*:       
-      +%@@@@@@@%%=...  ...                    ...=%@%@@@@@@@@@%+      
-    :#@@@@@@@@@@+  ..   ..    ..               ...-#%%@@@@@@@@@@#:    
-   -%@@@@@@@@@@#: ..  ..::::---=-:.....            =%@@@@@@@@@@@@%-   
-  =%@@@@@@@@@@@+  .. .::---====++===-----:..       :%@@@@@@@@@@@@@%=  
- :%@@@@@@@@@@@@* .. ..:----===++++=====---::.     .-%@@@@@@@@@@@@@@%: 
-.#@@@@@@@@@@@@@%:.. .:---=====++++++=====---::    .+@@@@@@@@@@@@@@@@#.
-=@@@@@@@@@@@@@@@+.. :-::::---===++*++==---::::.   :%@@@@@@@@@@@@@@@@@=
-%@@@@@@@@@@@@%%%*. .==-:::.....:-==-:.....:::--:  =%%@@@@@@@@@@@@@@@@%
-@@@@@@@@@@@@%%@%==.:==-:-+:.+=--===-:-=+..=:.:==..:+@%@@@%%%%%%%%@@@@@
-@@@@@@@@@@@@%%@%==.=+==========--==---==----====-.:*%%@@@%%%%%%%%@@@@@
-@@@@@@@@@@@@@%@%+-:===+++++++====++=--====+++====.:#%%@@@%%%%%%%%@@@@@
-%@@@@@@@@@@@@%@@#=--=====++++===+*+==-=++++===-=--+%%@@@@%%%%%%%%@@@@%
-=@@@@@@@@@@@@@@%@#*=======++++---=-::-=++==----==*%@@@@@@%%%%%%%%@@@@=
-.#@@@@@@@@@@@@@@@@@%+=--===----:----::---------+%@@%%@@@@%%%%%%%%@@@#.
- :%@@@@@@@@@@@@@@@%@%=---=-:::-=====-:::.:----=#@%@@@@@@@%%%%%%%%@@%: 
-  =%@@@@@@@@@@@@@@@@@%=--=--=-------:------:--#@@@@@@@@@@@@%%%%%%@%=  
-   -%@@@@@@@@@@@@@@@%@*=------===-==------:--*@@@@@@@@@@@@@%%%%%@%-   
-    :#@@@@@@@@@@@@%@@@*-------::::::::::::::-#@%@@%%@@@@@@@@@@@@#:    
-      +%@@@@@@@@@@%@@#+====--::.........::---*#@@@%%%@@@@@@@@@%+      
-       :*%@@@@@@@@@#+-*=======---==-------=--*-+%@@%%@@@%%@@%*:       
-         :*%@@@@%#+-::#====++========-=====-**..-*%@@@@@@@%*:         
-           .=++=-:::::+#-=++++===========-=##:....-=+*#%*=.           
-                .::::::*#===++++++=====--*%#-.....::..                
-                   ..:::*#+==+++++++===*%%%=.::....                   
-                        .=+=-=+++++++*++##=..                         
-```
+<img src="./ascii.svg" width="460" alt="Aruneshwaran K"/>
 
-<img src="https://komarev.com/ghpvc/?username=Aruneshw&style=flat-square&color=00c8ff&label=profile+views" alt="Profile Views" />
+<img src="./stats.svg" width="620" alt="Contributions in the last year"/>
 
----
-
-[github](https://github.com/Aruneshw)  ·  [linkedin](https://www.linkedin.com/in/aruneshwaran-k/)  ·  [email](mailto:aruneshownsty1@gmail.com)
+[github](https://github.com/Aruneshw) &nbsp;·&nbsp;
+[linkedin](https://www.linkedin.com/in/aruneshwaran-k/) &nbsp;·&nbsp;
+[email](mailto:aruneshownsty1@gmail.com)
 
 </div>
 
----
+<img src="./hd-about.svg" width="620" alt="about"/>
 
-## about
-
-> AI & ML student at Bannari Amman Institute of Technology (BIT), Sathyamangalam.
+> AI & ML student at Bannari Amman Institute of Technology (BIT), Sathyamangalam.<br>
 > Sharp tools over big vague ideas.
 
-I build autonomous agents, offensive-security frameworks, and production-grade AI systems. Right now that's [AntiGravity](https://github.com/Aruneshw/c2-orchestration) — a fully autonomous, multi-agent Active Directory red team framework running on local LLMs with LangGraph orchestration. Also deep into RAG pipelines, phishing detection, and browser-based AI tools.
+I build autonomous agents, offensive-security frameworks, and production-grade AI systems. Right now that's<br>
+[AntiGravity](https://github.com/Aruneshw/c2-orchestration) — a fully autonomous, multi-agent Active Directory red team framework<br>
+running on local LLMs with LangGraph orchestration. Also deep into RAG pipelines,<br>
+phishing detection, and browser-based AI tools.
 
 Founder · [Zero Gravity](https://github.com/Aruneshw/Zero_Gravity) (StartupTN ID: STN95825) · IEEE Student Chapter
 
----
+<img src="./hd-stack.svg" width="620" alt="stack"/>
 
-## stack
+<p align="center">
+<img src="https://skillicons.dev/icons?i=python,typescript,javascript,kotlin,react,nodejs,langchain&theme=dark" alt="Stack 1" /><br/>
+<img src="https://skillicons.dev/icons?i=fastapi,docker,postgres,redis,git,linux,vscode&theme=dark" alt="Stack 2" /><br/>
+</p>
 
-`python`  `typescript`  `javascript`  `kotlin`  `react`  `node`  `langchain`  `langgraph`  `ollama`  `fastapi`  `docker`  `neo4j`  `postgres`  `redis`  `git`  `linux`
+<samp>python &nbsp; typescript &nbsp; javascript &nbsp; kotlin &nbsp; react &nbsp; node &nbsp; langchain &nbsp; langgraph &nbsp; ollama &nbsp; fastapi &nbsp; docker &nbsp; neo4j &nbsp; postgres &nbsp; redis &nbsp; git &nbsp; linux</samp>
 
----
+<img src="./hd-projects.svg" width="620" alt="projects"/>
 
-## projects
+**[bit-librarary](https://github.com/Aruneshw/bit-librarary)** &nbsp;·&nbsp; <samp>typescript, next.js</samp><br>
+Enterprise-grade multi-framework library platform with NGINX load balancing,<br>
+TLS tunneling, and Vue/Solid.js support. Full-stack Next.js architecture.
 
-[**bit-librarary**](https://github.com/Aruneshw/bit-librarary)  ·  typescript, next.js
-Enterprise-grade multi-framework library platform with NGINX load balancing, TLS tunneling, and Vue/Solid.js support. Full-stack Next.js architecture with caching and rate limiting.
+**[bit-ieee](https://github.com/Aruneshw/bit-ieee)** &nbsp;·&nbsp; <samp>typescript, next.js</samp><br>
+IEEE Student Chapter hub for BIT Sathyamangalam. Arduino sketch compiler,<br>
+AI-driven circuit grading service, and event management platform.
 
-[**bit-ieee**](https://github.com/Aruneshw/bit-ieee)  ·  typescript, next.js
-IEEE Student Chapter hub for BIT Sathyamangalam. Arduino sketch compiler, AI-driven circuit grading service, and event management platform.
+**[AntiGravity](https://github.com/Aruneshw/c2-orchestration)** &nbsp;·&nbsp; <samp>python, langgraph, docker</samp><br>
+Autonomous multi-agent AD red team framework. Six LLM agents orchestrated<br>
+through LangGraph with MCP tooling, ROE enforcement, and sandboxed container isolation.
 
-[**AntiGravity**](https://github.com/Aruneshw/c2-orchestration)  ·  python, langgraph, docker
-Autonomous multi-agent AD red team framework. Six LLM agents orchestrated through LangGraph with MCP tooling, ROE enforcement, and sandboxed container isolation. BloodHound, Impacket, Covenant integration.
+**[OCR-EXTRACTOR](https://github.com/Aruneshw/OCR-EXTRACTOR)** &nbsp;·&nbsp; <samp>typescript, tesseract.js</samp><br>
+Browser-based optical character recognition with drag-and-drop interface,<br>
+multi-language support, and live text extraction preview.
 
-[**OCR-EXTRACTOR**](https://github.com/Aruneshw/OCR-EXTRACTOR)  ·  typescript, tesseract.js
-Browser-based optical character recognition with drag-and-drop, multi-language support, and live text extraction. Deployed on GitHub Pages.
+**[Zero_Gravity](https://github.com/Aruneshw/Zero_Gravity)** &nbsp;·&nbsp; <samp>html, css, javascript</samp><br>
+Community-driven tech freelance ecosystem connecting clients with student developers<br>
+through a competitive Problem Hub model.
 
-[**Zero_Gravity**](https://github.com/Aruneshw/Zero_Gravity)  ·  html, css, javascript
-Community-driven tech freelance ecosystem connecting clients with student developers through a competitive Problem Hub model. StartupTN registered.
+**[LIFEOS](https://github.com/Aruneshw/LIFEOS)** &nbsp;·&nbsp; <samp>kotlin</samp><br>
+Personal life operating system — native Android app for productivity,<br>
+habit tracking, and task orchestration.
 
-[**LIFEOS**](https://github.com/Aruneshw/LIFEOS)  ·  kotlin
-Personal life operating system — native Android app for productivity, habit tracking, and task orchestration.
+**[ai_app](https://github.com/Aruneshw/ai_app)** &nbsp;·&nbsp; <samp>kotlin</samp><br>
+AI-powered mobile application built with Kotlin for intelligent<br>
+on-device processing and LLM integration.
 
-[**ai_app**](https://github.com/Aruneshw/ai_app)  ·  kotlin
-AI-powered mobile application built with Kotlin for intelligent on-device processing and LLM integration.
+**[TRAVELOOP](https://github.com/Aruneshw/TRAVELOOP)** &nbsp;·&nbsp; <samp>hackathon</samp><br>
+Travel platform built at OODO Hackathon. Route optimization<br>
+and trip planning with collaborative features.
 
-[**TRAVELOOP**](https://github.com/Aruneshw/TRAVELOOP)  ·  hackathon
-Travel platform built at OODO Hackathon. Route optimization and trip planning with collaborative features.
-
----
-
-## stats
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=Aruneshw&show_icons=true&theme=github_dark&hide_border=true&bg_color=00000000&title_color=c9d1d9&icon_color=58a6ff&text_color=8b949e&ring_color=58a6ff" alt="GitHub Stats" height="170" />
-<img src="https://github-readme-streak-stats.herokuapp.com?user=Aruneshw&theme=transparent&hide_border=true&ring=58a6ff&fire=58a6ff&currStreakLabel=c9d1d9&sideLabels=8b949e&dates=6e7681&currStreakNum=c9d1d9&sideNums=c9d1d9" alt="Streak Stats" height="170" />
-
-</div>
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Aruneshw&layout=compact&theme=github_dark&hide_border=true&bg_color=00000000&title_color=c9d1d9&text_color=8b949e&langs_count=10" alt="Top Languages" height="170" />
-
-</div>
-
----
+<img src="./hd-stats.svg" width="620" alt="stats"/>
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Aruneshw&theme=github-dark&hide_border=true&bg_color=00000000&color=8b949e&line=58a6ff&point=c9d1d9&area=true&area_color=58a6ff" alt="Contribution Graph" width="95%" />
+<img src="./streak.svg" width="620" alt="Current and longest streak"/>
+
+<img src="./langs.svg" width="620" alt="Top languages by bytes and by repo"/>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Aruneshw&theme=github-dark&hide_border=true&bg_color=00000000&color=8b949e&line=c9d1d9&point=c9d1d9&area=true&area_color=30363d" width="620" alt="The last year, one commit per day"/>
 
 </div>
 
----
+<img src="./hd-about-this-page.svg" width="620" alt="about this page"/>
 
-## about this page
+Every graphic here is generated, not embedded from anyone else's server.<br>
+`ascii.svg` is a photo pushed through a character ramp (`.` `:` `-` `=` `+` `*` `#` `%` `@`)<br>
+using a Python script and PIL. The section headings and stat graphics use<br>
+SMIL animations inside SVGs — because GitHub strips scripts from READMEs.
 
-Every section here uses plain markdown — no third-party CSS, no JavaScript, nothing that GitHub would strip. The portrait at the top is generated from a photo pushed through a character ramp (`· : - = + * # % @`) using a Python script and PIL. The stat graphics are pulled from open-source badge services that query the GitHub API directly.
+They animate with SMIL inside the SVG, because GitHub strips scripts from<br>
+READMEs — and since nothing loads from a third party, nothing here can<br>
+rate-limit or go dark. The headings are SVGs for the same reason: GitHub also<br>
+strips CSS, so an image is the only way to put this page's own typeface on them.
 
-`python`  `PIL`  `ascii ramp: .:-=+*#%@`
+The stack icons are from [skillicons.dev](https://skillicons.dev) — open-source,<br>
+dark-themed, and resolution-independent.
+
+<samp>python &nbsp; PIL &nbsp; SMIL &nbsp; character ramp: .:-=+*#%@</samp>
