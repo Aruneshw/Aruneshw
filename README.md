@@ -6,7 +6,7 @@
 
 [github](https://github.com/Aruneshw) &nbsp;·&nbsp;
 [linkedin](https://www.linkedin.com/in/aruneshwaran-k/) &nbsp;·&nbsp;
-[email](mailto:aruneshownsty1@gmail.com)
+[email](mailto:aruneshownsty1@gmail.com);
 [portfolio](portfolio-5933.onvoroa.com) &nbsp;·&nbsp;
 
 </div>
