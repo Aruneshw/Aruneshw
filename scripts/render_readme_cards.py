@@ -414,8 +414,8 @@ if __name__ == "__main__":
     hero()
     tile("build", "BUILD", TECH, "#ffffff", "AI", "systems",
          "Autonomous agents, local LLMs and RAG pipelines. Built to be useful.", 3.1, 0)
-    tile("create", "CREATE", STUDIO, "#ffffff", "Zero", "Gravity",
-         "A tech freelance ecosystem connecting clients with student developers.", 3.35, 1)
+    tile("create", "EXPLORE", STUDIO, "#ffffff", "My", "portfolio",
+         "Explore my projects, AI tools and the work I'm building.", 3.35, 1)
     tile("learn", "LEARN", LEARN, INK, "AI", "& ML",
          "Learning at BIT, Sathyamangalam. Building with the IEEE community.", 3.6, 2)
     activity(data)
