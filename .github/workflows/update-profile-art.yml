@@ -1,0 +1,49 @@
+name: Update profile art
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "assets/profile.png"
+      - "fonts/**"
+      - ".github/workflows/update-profile-art.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-art
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_PROFILE_USER: Aruneshw
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+      - name: Fetch real contribution counts
+        run: python scripts/fetch_contributions.py
+      - name: Render portrait and cards
+        run: |
+          python scripts/render_portrait.py
+          python scripts/render_readme_cards.py
+      - name: Commit refreshed artwork
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/contributions.json assets/portrait-ascii.svg cards/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh profile artwork [skip ci]"
+            git push
+          fi
