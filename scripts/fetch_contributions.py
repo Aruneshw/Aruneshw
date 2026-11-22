@@ -6,16 +6,14 @@ write data/contributions.json with the raw days plus derived stats
 (current streak, longest streak, best day, monthly totals).
 
 No token, no auth, no GraphQL -- just the public HTML GitHub already serves.
-Run daily by .github/workflows/update-profile-art.yml.
+Refreshed approximately every 15 minutes by GitHub Actions.
 """
 import datetime
 import json
 import os
 import re
-import sys
-
-import requests
 from bs4 import BeautifulSoup
+from github_data import github_session
 
 USERNAME = os.environ.get("GH_PROFILE_USER", "Aruneshw")
 URL = f"https://github.com/users/{USERNAME}/contributions"
@@ -23,14 +21,14 @@ OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "contributions.
 
 
 def fetch_days():
-    resp = requests.get(URL, headers={"User-Agent": "profile-readme-bot/1.0"}, timeout=30)
-    resp.raise_for_status()
+    with github_session(authenticated=False) as session:
+        resp = session.get(URL, headers={"Accept": "text/html"}, timeout=30)
+        resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
     cells = soup.select("td.ContributionCalendar-day")
     if not cells:
-        print("no calendar cells found -- github markup may have changed", file=sys.stderr)
-        sys.exit(1)
+        raise ValueError("No calendar cells found; GitHub markup may have changed")
 
     days = []
     for td in cells:
@@ -50,12 +48,34 @@ def fetch_days():
         days.append({"date": date, "count": count, "level": int(td.get("data-level") or 0)})
 
     days.sort(key=lambda d: d["date"])
+    validate_days(days)
+    today = datetime.datetime.now(datetime.timezone.utc).date()
+    last = datetime.date.fromisoformat(days[-1]["date"])
+    if not 350 <= len(days) <= 371 or not today - datetime.timedelta(days=1) <= last <= today:
+        raise ValueError("GitHub returned an incomplete or stale contribution calendar")
     return days
 
 
-def compute_current_streak(days):
+def validate_days(days):
+    if not days:
+        raise ValueError("The contribution calendar is empty")
+    previous = None
+    for day in days:
+        date = datetime.date.fromisoformat(day["date"])
+        if previous is not None and date - previous != datetime.timedelta(days=1):
+            raise ValueError("Contribution dates must be unique and consecutive")
+        if not isinstance(day["count"], int) or day["count"] < 0:
+            raise ValueError("Contribution counts must be nonnegative integers")
+        previous = date
+
+
+def compute_current_streak(days, today=None):
+    today = today or datetime.datetime.now(datetime.timezone.utc).date()
     idx = len(days) - 1
-    if days[idx]["count"] == 0:
+    last = datetime.date.fromisoformat(days[idx]["date"])
+    if last < today - datetime.timedelta(days=1):
+        return 0, None, None
+    if last == today and days[idx]["count"] == 0:
         idx -= 1  # today isn't over yet -- don't break the streak on it
     streak = 0
     end_idx = idx
@@ -86,11 +106,12 @@ def compute_longest_streak(days):
     return longest, longest_start, longest_end
 
 
-def build_data(days):
+def build_data(days, today=None):
+    validate_days(days)
     total = sum(d["count"] for d in days)
     active_days = sum(1 for d in days if d["count"] > 0)
     best = max(days, key=lambda d: d["count"])
-    cur_len, cur_start, cur_end = compute_current_streak(days)
+    cur_len, cur_start, cur_end = compute_current_streak(days, today=today)
     long_len, long_start, long_end = compute_longest_streak(days)
 
     monthly = {}
@@ -101,6 +122,7 @@ def build_data(days):
 
     return {
         "username": USERNAME,
+        "source": URL,
         "generated_at": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "range": {"start": days[0]["date"], "end": days[-1]["date"]},
         "total_contributions": total,

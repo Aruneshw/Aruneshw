@@ -24,6 +24,7 @@ from html import escape
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, "..")
 DATA = os.path.join(ROOT, "data", "contributions.json")
+PROFILE = os.path.join(ROOT, "data", "profile.json")
 OUT = os.path.join(ROOT, "cards")
 FONTS = os.path.join(ROOT, "fonts")
 PORTRAIT = os.path.join(ROOT, "assets", "portrait-ascii.svg")
@@ -253,8 +254,9 @@ def tile(name, label, color, on, num, word, blurb, delay, pos):
 # ---- 3 · activity (monthly bars) ------------------------------------------------
 def activity(data):
     h = 340
-    monthly = data["monthly"][-12:]
-    best = max(monthly[:-1] or monthly, key=lambda m: m["total"])
+    # Include both boundary months so the bars add up to the displayed yearly total.
+    monthly = data["monthly"]
+    best = max(monthly, key=lambda m: m["total"])
     top = max(1, max(m["total"] for m in monthly))
     x0, x1, base, maxh, gap = 40, 600, 292, 140, 10
     bw = (x1 - x0 - gap * (len(monthly) - 1)) / len(monthly)
@@ -262,13 +264,13 @@ def activity(data):
     for i, m in enumerate(monthly):
         partial = i == len(monthly) - 1
         is_best = m is best
-        bh = max(4, round(m["total"] / top * maxh))
+        bh = max(4, round(m["total"] / top * maxh)) if m["total"] else 0
         x = x0 + i * (bw + gap)
         fill = TECH if is_best else ("#c9c9c4" if partial else INK)
         label = datetime.date.fromisoformat(m["month"] + "-01").strftime("%b")
         bars.append(
             f'<rect class="g" style="animation-delay:{2.2 + i * 0.07:.2f}s" x="{x:.1f}" y="{base - bh}" '
-            f'width="{bw:.1f}" height="{bh}" rx="4" fill="{fill}"><title>{label}: {m["total"]:,}</title></rect>'
+            f'width="{bw:.1f}" height="{bh}" rx="4" fill="{fill}"><title>{m["month"]}: {m["total"]:,}</title></rect>'
             f'<text class="f" style="animation-delay:{2.2 + i * 0.07:.2f}s" x="{x + bw / 2:.1f}" y="{base + 22}" '
             f'text-anchor="middle" font-family="{MONO}" font-size="11" fill="{MUTED}">{label}</text>'
         )
@@ -282,7 +284,7 @@ def activity(data):
     streak_note = "current streak, and the longest" if cs >= ls else f"current streak, longest {ls}"
     total_days = len(data["days"])
     stats = [
-        (f'{cs} <tspan font-style="italic">days</tspan>', streak_note),
+        (f'{cs} <tspan font-style="italic">{"day" if cs == 1 else "days"}</tspan>', streak_note),
         (f'{data["active_days"]}<tspan fill="#8e8e93"> / {total_days}</tspan>', "days with contributions"),
         (f'{data["best_day"]["count"]}', "on the busiest day"),
     ]
@@ -298,7 +300,7 @@ def activity(data):
             side.append(f'<rect class="f" {d(2.6)} x="650" y="{y + 44}" width="190" height="1" fill="{RULE}"/>')
     body = f"""
 <rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
-<text class="f" {d(1.9)} x="40" y="58" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">THE LAST 12 MONTHS ON GITHUB</text>
+<text class="f" {d(1.9)} x="40" y="58" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">THE PAST YEAR ON GITHUB</text>
 <text class="r" {d(2.0)} x="38" y="114" font-family="{SERIF}" font-size="52" fill="{INK}">{data["total_contributions"]:,} <tspan font-style="italic">contributions</tspan></text>
 {''.join(bars)}
 {''.join(side)}
@@ -310,21 +312,24 @@ def activity(data):
 # ---- 4 · repo cards -----------------------------------------------------------
 REPO_W, REPO_H = 880 / 3 - 8, 176
 REPOS = [
-    ("gpu_toolkit", "Secure, single-node LLM inference across devices with llama.cpp and mTLS.", "Go", TECH),
-    ("bit-ieee", "The IEEE Student Chapter hub at BIT: events, circuits and AI-powered tools.", "TypeScript", STUDIO),
-    ("OCR-EXTRACTOR", "Extract text from images in your browser with multi-language OCR and live previews.", "TypeScript", LEARN),
+    ("gpu_toolkit", TECH),
+    ("bit-ieee", STUDIO),
+    ("OCR-EXTRACTOR", LEARN),
 ]
 
 
-def repo_card(i, name, desc, lang, color, stars):
+def repo_card(i, name, desc, lang, color, stars, forks):
     delay = 4.6 + i * 0.12
-    meta = f"{lang}  ·  ★ {stars}" if stars else lang
+    meta = f"{lang} · ★ {stars} · forks {forks}"
+    lines = wrap(desc, 34)
+    if len(lines) > 3:
+        lines = lines[:2] + [lines[2][:31].rstrip() + "..."]
     body = f"""
 <rect width="{REPO_W}" height="{REPO_H}" rx="14" fill="{PAPER}"/>
 <g class="r" {d(delay)}>
   <rect x="24" y="30" width="8" height="8" rx="2" fill="{color}"/>
   <text x="40" y="39" font-family="{SANS}" font-weight="600" font-size="18" fill="{INK}">{escape(name)}</text>
-  {text_lines(24, 72, wrap(desc, 34), 21, f'font-family="{SANS}" font-size="14" fill="{INK_SOFT}"')}
+  {text_lines(24, 72, lines, 21, f'font-family="{SANS}" font-size="14" fill="{INK_SOFT}"')}
   <text x="24" y="{REPO_H - 24}" font-family="{MONO}" font-size="12" fill="{MUTED}">{escape(meta)}</text>
 </g>
 """
@@ -351,6 +356,8 @@ def level_for(c):
 
 def heatmap(data):
     days = data["days"]
+    updated = datetime.datetime.fromisoformat(data["generated_at"].replace("Z", "+00:00"))
+    freshness = updated.strftime("UPDATED %d %b %H:%M UTC").upper()
     first = datetime.date.fromisoformat(days[0]["date"])
     lead = (first.weekday() + 1) % 7  # sunday = 0
     cell, step, gx, gy = 12, 15, 44, 96
@@ -384,7 +391,7 @@ def heatmap(data):
     body = f"""
 <rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
 <text class="r" {d(0.8)} x="42" y="62" font-family="{SERIF}" font-size="34" fill="{INK}">Every day, <tspan font-style="italic" fill="{TECH}">in blue</tspan></text>
-<text class="f" {d(0.8)} x="{right}" y="60" text-anchor="end" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">REFRESHED DAILY</text>
+<text class="f" {d(0.8)} x="{right}" y="60" text-anchor="end" font-family="{MONO}" font-size="12" fill="{MUTED}">{freshness}</text>
 {''.join(cells)}
 <g class="f" {d(2.4)}>{labels}
 <text x="{legend_x - 8}" y="{gy + 7 * step + 16}" text-anchor="end" font-family="{MONO}" font-size="11" fill="{MUTED}">less</text>
@@ -395,33 +402,27 @@ def heatmap(data):
                              f'Contribution graph: {data["total_contributions"]:,} contributions in the last year'))
 
 
-def repo_stars():
-    stars = {}
-    try:
-        import requests
-
-        for name, *_ in REPOS:
-            r = requests.get(f"https://api.github.com/repos/{USERNAME}/{name}", timeout=10)
-            if r.ok:
-                stars[name] = r.json().get("stargazers_count", 0)
-    except Exception as e:  # offline: keep going without stars
-        print(f"stars unavailable: {e}")
-    return stars
-
-
 if __name__ == "__main__":
     data = json.load(open(DATA))
+    profile = json.load(open(PROFILE))
+    if any(snapshot["username"].lower() != USERNAME.lower() for snapshot in (data, profile)):
+        raise ValueError("The data belongs to a different GitHub account")
+    missing = [name for name, _ in REPOS if name not in profile["repositories"]]
+    if missing:
+        raise ValueError(f"Featured repositories are no longer public: {missing}")
     hero()
-    tile("build", "BUILD", TECH, "#ffffff", "AI", "systems",
-         "Autonomous agents, local LLMs and RAG pipelines. Built to be useful.", 3.1, 0)
+    tile("build", "BUILD", TECH, "#ffffff", str(profile["public_repos"]), "repos",
+         f'{profile["followers"]} followers. {profile["total_stars"]} stars and '
+         f'{profile["total_forks"]} forks across public repositories.', 3.1, 0)
     tile("create", "EXPLORE", STUDIO, "#ffffff", "My", "portfolio",
          "Explore my projects, AI tools and the work I'm building.", 3.35, 1)
     tile("learn", "LEARN", LEARN, INK, "AI", "& ML",
          "Learning at BIT, Sathyamangalam. Building with the IEEE community.", 3.6, 2)
     activity(data)
-    stars = repo_stars()
-    for i, (name, desc, lang, color) in enumerate(REPOS):
-        repo_card(i, name, desc, lang, color, stars.get(name))
+    for i, (name, color) in enumerate(REPOS):
+        repo = profile["repositories"][name]
+        repo_card(i, name, repo["description"] or "No description provided on GitHub.",
+                  repo["language"] or "Not detected", color, repo["stars"], repo["forks"])
     section_title("What I'm", "coding", "dark")
     section_title("What I'm", "coding", "light")
     heatmap(data)

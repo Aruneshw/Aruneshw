@@ -2,12 +2,16 @@ name: Update profile art
 
 on:
   schedule:
-    - cron: "17 6 * * *"
+    # Offset from the hour; GitHub may delay scheduled runs.
+    - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
+  repository_dispatch:
+    types: [profile-refresh]
   push:
     branches: [main]
     paths:
       - "scripts/**"
+      - "tests/**"
       - "assets/profile.png"
       - "fonts/**"
       - ".github/workflows/update-profile-art.yml"
@@ -34,6 +38,12 @@ jobs:
         run: pip install -r scripts/requirements.txt
       - name: Fetch real contribution counts
         run: python scripts/fetch_contributions.py
+      - name: Fetch public repository and profile data
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/fetch_profile.py
+      - name: Verify contribution calculations
+        run: python -m unittest discover -s tests -v
       - name: Render portrait and cards
         run: |
           python scripts/render_portrait.py
@@ -42,8 +52,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/contributions.json assets/portrait-ascii.svg cards/
+          git add data/contributions.json data/profile.json assets/portrait-ascii.svg cards/
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh profile artwork [skip ci]"
+            git pull --rebase origin main
             git push
           fi
