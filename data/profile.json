@@ -1,10 +1,10 @@
 {
   "username": "Aruneshw",
-  "generated_at": "2026-11-26T11:00:48Z",
+  "generated_at": "2026-11-26T20:05:17Z",
   "source": "https://api.github.com/users/Aruneshw",
   "public_repos": 40,
   "followers": 6,
-  "following": 4,
+  "following": 3,
   "total_stars": 5,
   "total_forks": 6,
   "repositories": {
@@ -48,7 +48,7 @@
       "stars": 0,
       "forks": 0,
       "url": "https://github.com/Aruneshw/Aruneshw",
-      "pushed_at": "2026-11-26T02:16:38Z",
+      "pushed_at": "2026-11-26T11:00:50Z",
       "archived": false,
       "fork": false
     },
